@@ -17,7 +17,7 @@ public class CofreService {
 
     // Método que o React vai ficar chamando para ver se o cadeado já sumiu
     public String verificarStatusDoRelogio() {
-        LocalDateTime dataLiberacao = LocalDateTime.of(2026, 3, 6, 0, 0); // Dia 6 de março de 2026, às 00:00
+        LocalDateTime dataLiberacao = LocalDateTime.of(2026, 3, 4, 0, 0); // Dia 6 de março de 2026, às 00:00
 
         if (LocalDateTime.now().isBefore(dataLiberacao)) {
             return "TRANCADO";
@@ -29,7 +29,7 @@ public class CofreService {
     public Surpresa tentarDesbloquear(String respostaDigitada) {
 
         // 1. A Regra do Tempo (Segurança dupla!)
-        LocalDateTime dataLiberacao = LocalDateTime.of(2026, 3, 6, 0, 0);
+        LocalDateTime dataLiberacao = LocalDateTime.of(2026, 3, 4, 0, 0);
         if (LocalDateTime.now().isBefore(dataLiberacao)) {
             throw new RuntimeException("Apressadinha! O cadeado só abre no dia 06/03.");
         }
